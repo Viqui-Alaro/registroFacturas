@@ -9,11 +9,15 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AuthBackground(
-        child: Container(
-          width: double.infinity,
-          height: 300,
-          color: Colors.red,
-        ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 250),
+              CardContainer(),
+
+            ],
+          ),
+        )
       )
    );
   }
