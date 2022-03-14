@@ -43,17 +43,25 @@ class LoginScreen extends StatelessWidget {
       return Container(
         child: Form(
           // TODO: mantener la referencia al KEY
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           child: Column(
             children: [
               TextFormField(
+                
                 autocorrect: false,
-                keyboardType: TextInputType.emailAddress,
+                keyboardType: TextInputType.number,
                 decoration: InputDecorations.authInputDecoration(
                   hintText: '9199772013',
                   labelText: 'Codigo Dependiente',
                   prefixIcon: Icons.person
                 ),
-               
+               validator: (value) {
+                final intNumber = int.tryParse(value.toString());
+                if (intNumber != null && intNumber.bitLength >= 10){
+                return null;
+                }
+                return 'Ingrese el numero';
+              },    
               ),
               SizedBox(height: 30,),
               TextFormField(
@@ -76,6 +84,11 @@ class LoginScreen extends StatelessWidget {
                   labelText: 'Contraseña',
                   prefixIcon: Icons.lock_outline
                 ),
+                validator: (value) {
+                  return (value !=null && value.length >=6)
+                    ? null
+                    : 'La Contraseña debe ser de 6 caracteres';
+                },
                
               ),
                SizedBox(height: 30,),
