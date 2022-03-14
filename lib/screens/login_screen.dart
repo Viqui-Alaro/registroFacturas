@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_registro_facturas/providers/login_form_provider.dart';
+import 'package:provider/provider.dart';
+
 import 'package:flutter_registro_facturas/ui/input_decorations.dart';
 import 'package:flutter_registro_facturas/widgets/widgets.dart';
+
 
 
 
@@ -20,7 +24,11 @@ class LoginScreen extends StatelessWidget {
                     SizedBox(height: 10,),
                     Text('SIAT EN TUS MANOS', style: Theme.of(context).textTheme.headline4,),
                     SizedBox(height: 30),
-                    _LoginForm()
+                  ChangeNotifierProvider(
+                    create: ( _ )=>LoginFormProvider(),
+                    child: _LoginForm(),
+                    ),
+                   
 
                   ],
                 ),
@@ -40,9 +48,12 @@ class LoginScreen extends StatelessWidget {
   
     @override
     Widget build(BuildContext context) {
+
+      final loginForm = Provider.of<LoginFormProvider>(context);
       return Container(
         child: Form(
           // TODO: mantener la referencia al KEY
+          key: loginForm.formKey,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           child: Column(
             children: [
