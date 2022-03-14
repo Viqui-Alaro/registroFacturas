@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_registro_facturas/ui/input_decorations.dart';
 import 'package:flutter_registro_facturas/widgets/widgets.dart';
 
 
@@ -24,7 +25,7 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
               ),
-
+               SizedBox(height: 80),
             ],
           ),
         )
@@ -47,21 +48,47 @@ class LoginScreen extends StatelessWidget {
               TextFormField(
                 autocorrect: false,
                 keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blueGrey,
-                      width: 2
-                    )
-                  ),
+                decoration: InputDecorations.authInputDecoration(
                   hintText: '9199772013',
                   labelText: 'Codigo Dependiente',
-                  labelStyle: TextStyle(
-                    color: Colors.grey
-                  ),
-                  prefixIcon: Icon(Icons.person,color: Colors.lightBlueAccent)
+                  prefixIcon: Icons.person
                 ),
-              )
+               
+              ),
+              SizedBox(height: 30,),
+              TextFormField(
+                autocorrect: false,
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecorations.authInputDecoration(
+                  hintText: 'viqui.alaro',
+                  labelText: 'Usuario',
+                  prefixIcon: Icons.person
+                ),
+               
+              ),
+              SizedBox(height: 30,),
+              TextFormField(
+                autocorrect: false,
+                obscureText: true,
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecorations.authInputDecoration(
+                  hintText: '********',
+                  labelText: 'Contraseña',
+                  prefixIcon: Icons.lock_outline
+                ),
+               
+              ),
+               SizedBox(height: 30,),
+               MaterialButton(
+                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                 disabledColor:Color.fromRGBO(38, 38, 38, 0.4),
+                 elevation: 0,
+                 color: Color.fromRGBO(38, 38, 38, 0.4),
+                 child: Container(
+                   padding: EdgeInsets.symmetric(horizontal: 80,vertical: 15),// Color.fromRGBO(38, 38, 38, 0.4)
+                   child: Text('Ingresar', style: TextStyle(color: Colors.white),),
+                 ),
+                 onPressed: (){})
             ],
           ),
         ),
