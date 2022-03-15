@@ -3,6 +3,15 @@ import 'package:flutter_registro_facturas/screens/screens.dart';
 
 void main() => runApp(MyApp());
 
+
+class AppState extends StatelessWidget {
+  
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
