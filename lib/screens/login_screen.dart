@@ -66,6 +66,7 @@ class LoginScreen extends StatelessWidget {
                   labelText: 'Codigo Dependiente',
                   prefixIcon: Icons.person
                 ),
+                onChanged:(value) => loginForm.codigo = value ,
                validator: (value) {
                 final intNumber = int.tryParse(value.toString());
                 if (intNumber != null && intNumber.bitLength >= 10){
@@ -83,6 +84,7 @@ class LoginScreen extends StatelessWidget {
                   labelText: 'Usuario',
                   prefixIcon: Icons.person
                 ),
+                 onChanged: (value) => loginForm.usuario = value,
                
               ),
               SizedBox(height: 30,),
@@ -95,6 +97,7 @@ class LoginScreen extends StatelessWidget {
                   labelText: 'Contraseña',
                   prefixIcon: Icons.lock_outline
                 ),
+                onChanged: (value) => loginForm.password = value,
                 validator: (value) {
                   return (value !=null && value.length >=6)
                     ? null
@@ -112,7 +115,10 @@ class LoginScreen extends StatelessWidget {
                    padding: EdgeInsets.symmetric(horizontal: 80,vertical: 15),// Color.fromRGBO(38, 38, 38, 0.4)
                    child: Text('Ingresar', style: TextStyle(color: Colors.white),),
                  ),
-                 onPressed: (){})
+                 onPressed: (){
+                   if(!loginForm.isValidForm()) return;
+                   Navigator.pushReplacementNamed(context, 'home');
+                 })
             ],
           ),
         ),
