@@ -113,10 +113,21 @@ class LoginScreen extends StatelessWidget {
                  color: Color.fromRGBO(38, 38, 38, 0.4),
                  child: Container(
                    padding: EdgeInsets.symmetric(horizontal: 80,vertical: 15),// Color.fromRGBO(38, 38, 38, 0.4)
-                   child: Text('Ingresar', style: TextStyle(color: Colors.white),),
+                   child: Text(
+                     loginForm.isLoading
+                      ? 'Espere'
+                      : 'Ingresar',
+           
+                     style: TextStyle(color: Colors.white),),
                  ),
-                 onPressed: (){
+                 onPressed: loginForm.isLoading ? null:() async{
+                   FocusScope.of(context).unfocus();
                    if(!loginForm.isValidForm()) return;
+
+                   loginForm.isLoading=true;
+                   await Future.delayed(Duration(seconds: 2));
+                   //validar si el login es correcto
+                   loginForm.isLoading=false;
                    Navigator.pushReplacementNamed(context, 'home');
                  })
             ],
