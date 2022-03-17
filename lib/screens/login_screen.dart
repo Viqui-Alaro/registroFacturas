@@ -130,7 +130,7 @@ class LoginScreen extends StatelessWidget {
                   // await Future.delayed(Duration(seconds: 2));
                    //validar si el login es correcto
 
-                  final String? token = await authService.createAlbum('862', loginForm.codigo, loginForm.usuario, loginForm.password);
+                  final String? token = await authService.autentificacion('4689', loginForm.codigo, loginForm.usuario, loginForm.password);
 
 
                    loginForm.isLoading=false;

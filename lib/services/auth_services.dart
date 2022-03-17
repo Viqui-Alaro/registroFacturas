@@ -32,7 +32,7 @@ class AuthService extends ChangeNotifier{
   }
 
 */
-  Future<String?> createAlbum(String tipoUsuarioId,String nit, String login, String password) async {
+  Future<String?> autentificacion(String tipoUsuarioId,String nit, String login, String password) async {
   final response = await http.post(
     Uri.parse('https://siatrest.impuestos.gob.bo:39102/token/get'),
     headers: <String, String>{
@@ -45,8 +45,8 @@ class AuthService extends ChangeNotifier{
       'password':password
     }),
   );
-
- print(jsonDecode(response.body));
+ final Map<String,dynamic>decodedResp = json.decode(response.body);
+ print(decodedResp);
 
 }
 
