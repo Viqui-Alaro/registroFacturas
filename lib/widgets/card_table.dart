@@ -11,8 +11,7 @@ class CardTable extends StatelessWidget {
       children: [
         TableRow(
           children: [
-            _SingleCard(color: Colors.blue,icon: Icons.border_all,text: 'General',),
-            _SingleCard(color: Colors.pinkAccent,icon: Icons.car_rental,text: 'Trasport')
+            _SingleCard(color: Colors.blue,icon: Icons.border_all,text: 'Registro Facturas',),
             ]
         )
       ],

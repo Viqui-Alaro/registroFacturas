@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_registro_facturas/providers/login_form_provider.dart';
+import 'package:flutter_registro_facturas/services/services.dart';
 import 'package:provider/provider.dart';
 
 import 'package:flutter_registro_facturas/ui/input_decorations.dart';
@@ -122,11 +123,16 @@ class LoginScreen extends StatelessWidget {
                  ),
                  onPressed: loginForm.isLoading ? null:() async{
                    FocusScope.of(context).unfocus();
+                   final authService = Provider.of<AuthService>(context,listen: false);
                    if(!loginForm.isValidForm()) return;
 
                    loginForm.isLoading=true;
-                   await Future.delayed(Duration(seconds: 2));
+                  // await Future.delayed(Duration(seconds: 2));
                    //validar si el login es correcto
+
+                  final String? token = await authService.createAlbum('862', loginForm.codigo, loginForm.usuario, loginForm.password);
+
+
                    loginForm.isLoading=false;
                    Navigator.pushReplacementNamed(context, 'home');
                  })

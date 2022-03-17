@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_registro_facturas/screens/screens.dart';
+import 'package:flutter_registro_facturas/services/auth_services.dart';
+import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(AppState());
 
 
 class AppState extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) =>AuthService() )
+      ],
+      child: MyApp(),
+    );
   }
 }
 
