@@ -130,11 +130,19 @@ class LoginScreen extends StatelessWidget {
                   // await Future.delayed(Duration(seconds: 2));
                    //validar si el login es correcto
 
-                  final String? token = await authService.autentificacion('4689', loginForm.codigo, loginForm.usuario, loginForm.password);
+                  final String? errorMessage = await authService.autentificacion('4689', loginForm.codigo, loginForm.usuario, loginForm.password);
+
+                    if(errorMessage == null){
+                       Navigator.pushReplacementNamed(context, 'home');
+                    }else{
+                      // TODO: Mostrar error en la pantalla
+                      print(errorMessage);
+                    }
+
 
 
                    loginForm.isLoading=false;
-                   Navigator.pushReplacementNamed(context, 'home');
+                  // Navigator.pushReplacementNamed(context, 'home');
                  })
             ],
           ),
