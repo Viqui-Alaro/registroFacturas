@@ -32,7 +32,8 @@ class _HeaderIcon extends StatelessWidget {
       child: Container(
         width: double.infinity ,
         margin: EdgeInsets.only(top: 30),
-        child: Icon(Icons.person_pin,color: Colors.white,size: 100,),
+        child: Image(image: AssetImage('assets/icon_siatmap.png'),height: 200,),
+       
       ),
     );
   }
@@ -63,8 +64,8 @@ class _BlueBox extends StatelessWidget {
 
   BoxDecoration _blueBackground()=> BoxDecoration(
     gradient: LinearGradient(
-      colors:[ //57, 136, 189
-        Color.fromRGBO(14, 80, 124, 1),
+      colors:[ //57, 136, 189  //187, 216, 244  //226, 240, 254
+        Color.fromRGBO(226, 240, 254, 1),
         Color.fromRGBO(57, 136, 189, 1),
       ]
     )

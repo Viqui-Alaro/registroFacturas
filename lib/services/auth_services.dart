@@ -22,16 +22,13 @@ class AuthService extends ChangeNotifier{
     }),
   );
  final Map<String,dynamic>decodedResp = json.decode(response.body);
- print(decodedResp);
+
 
 
  if(decodedResp.containsKey('token') ){
    // token hay que guardarlo en un lugar seguro
-   // decodedResp['token']
-  // return decodedResp['token'];
-
 final vToken = decodedResp['token'];
- print(vToken);
+
  
       if(vToken!=null){
         return null;
