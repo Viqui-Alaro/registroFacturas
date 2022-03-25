@@ -2,12 +2,16 @@ import 'dart:convert';
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 
 
 class AuthService extends ChangeNotifier{
 
   // si retornamos algo es un error
+
+  final storage = new FlutterSecureStorage();
+
   Future<String?> autentificacion(String tipoUsuarioId,String nit, String login, String password) async {
   final response = await http.post(
     Uri.parse('https://siatrest.impuestos.gob.bo:39102/token/get'),
@@ -31,6 +35,7 @@ final vToken = decodedResp['token'];
 
  
       if(vToken!=null){
+        await storage.write(key: 'token', value:  decodedResp['token']);
         return null;
       }else{
         return decodedResp['mensajes']['descripcion'];
