@@ -44,5 +44,16 @@ final vToken = decodedResp['token'];
 
 }
 
+Future logout() async{
+  await storage.delete(key: 'token');
+  return;
+}
+
+// verifica si hay token
+
+Future<String> readToken() async{
+  return await storage.read(key: 'token') ?? '';
+}
+
 
 }
