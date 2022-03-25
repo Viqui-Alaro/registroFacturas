@@ -23,6 +23,7 @@ class LoginScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     SizedBox(height: 10,),
+
                     Text('SIAT EN TUS MANOS', style: Theme.of(context).textTheme.headline4,),
                     SizedBox(height: 30),
                   ChangeNotifierProvider(
