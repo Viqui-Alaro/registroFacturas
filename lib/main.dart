@@ -27,9 +27,9 @@ class MyApp extends StatelessWidget {
       title: 'Siat',
       initialRoute: 'login',
       routes: {
-        'login':( _ )=>LoginScreen(),
-        'home':( _ )=>HomeScreen(),
         'checking':( _ )=>CheckAuthScreen(),
+        'home':( _ )=>HomeScreen(),
+        'login':( _ )=>LoginScreen(),
       },
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: Colors.grey[300]
