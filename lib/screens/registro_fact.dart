@@ -11,6 +11,10 @@ class RegistroScreen extends StatefulWidget {
 class _RegistroScreenState extends State<RegistroScreen> {
 
   int _paginaActual = 0;
+  List<Widget> _paginas= [
+    paginaQR(),
+    paginaList()
+    ];
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +24,7 @@ class _RegistroScreenState extends State<RegistroScreen> {
         appBar: AppBar(
          title: Text('Registro Facturas')
          ),
-         body: Center(
-           child: Container(
-             child: Text('Hello Word'),
-           ),
-         ),
+         body: _paginas[_paginaActual],
          bottomNavigationBar: BottomNavigationBar(
            onTap: (index){
              setState(() {
@@ -40,6 +40,30 @@ class _RegistroScreenState extends State<RegistroScreen> {
          ),
        ),
 
+    );
+  }
+}
+
+
+class paginaQR extends StatelessWidget {
+  const paginaQR({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text('QR', style: TextStyle(fontSize: 30),),
+    );
+  }
+}
+
+
+class paginaList extends StatelessWidget {
+  const paginaList({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text('Listado', style: TextStyle(fontSize: 30),),
     );
   }
 }
