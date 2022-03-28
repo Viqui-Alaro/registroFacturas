@@ -11,7 +11,8 @@ class CardTable extends StatelessWidget {
       children: [
         TableRow(
           children: [
-            _SingleCard(color: Colors.blue,icon: Icons.border_all,text: 'Registro Facturas',),
+            _SingleCard(color: Colors.blue,icon: Icons.border_all,text: 'Registro Facturas',)
+            
             ]
         )
       ],
@@ -29,7 +30,8 @@ class _SingleCard extends StatelessWidget {
   const _SingleCard({Key? key, 
   required this.icon, 
   required this.color, 
-  required this.text}) : super(key: key);
+  required this.text,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

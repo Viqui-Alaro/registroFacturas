@@ -134,7 +134,7 @@ class LoginScreen extends StatelessWidget {
                   final String? errorMessage = await authService.autentificacion('4689', loginForm.codigo, loginForm.usuario, loginForm.password);
 
                     if(errorMessage == null){
-                       Navigator.pushReplacementNamed(context, 'home');
+                       Navigator.pushReplacementNamed(context, 'container');
                     }else{
                       // TODO: Mostrar error en la pantalla
                       print(errorMessage);

@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
         'checking':( _ )=>CheckAuthScreen(),
         'home':( _ )=>HomeScreen(),
         'login':( _ )=>LoginScreen(),
+        'container':( _ )=>RegistroScreen(),
       },
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: Colors.grey[300]
