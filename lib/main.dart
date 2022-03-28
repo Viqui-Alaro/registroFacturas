@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_registro_facturas/screens/screens.dart';
 import 'package:flutter_registro_facturas/services/auth_services.dart';
+import 'package:flutter_registro_facturas/share_preferences/preferences.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(AppState());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Preferences.init();
+  runApp(AppState());
+}
 
 
 class AppState extends StatelessWidget {

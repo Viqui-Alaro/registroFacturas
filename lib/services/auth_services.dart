@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_registro_facturas/share_preferences/preferences.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 
@@ -36,6 +37,7 @@ final vToken = decodedResp['token'];
  
       if(vToken!=null){
         await storage.write(key: 'token', value:  decodedResp['token']);
+        Preferences.token =  decodedResp['token'];
         return null;
       }else{
         return decodedResp['mensajes']['descripcion'];
