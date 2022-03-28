@@ -39,7 +39,7 @@ class CheckAuthScreen extends StatelessWidget {
                 transitionDuration: Duration(seconds: 0)
                 )
               );
-             //Navigator.of(context).pushReplacementNamed('home');
+            // Navigator.of(context).pushReplacementNamed('home');
             });
             }
            

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_registro_facturas/screens/screens.dart';
+import 'package:provider/provider.dart';
 
 class RegistroScreen extends StatefulWidget {
   const RegistroScreen({Key? key}) : super(key: key);
@@ -12,8 +13,8 @@ class _RegistroScreenState extends State<RegistroScreen> {
 
   int _paginaActual = 0;
   List<Widget> _paginas= [
-    paginaQR(),
-    paginaList()
+    registroQR(),
+    registroList()
     ];
 
   @override
@@ -40,30 +41,6 @@ class _RegistroScreenState extends State<RegistroScreen> {
          ),
        ),
 
-    );
-  }
-}
-
-
-class paginaQR extends StatelessWidget {
-  const paginaQR({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('QR', style: TextStyle(fontSize: 30),),
-    );
-  }
-}
-
-
-class paginaList extends StatelessWidget {
-  const paginaList({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Listado', style: TextStyle(fontSize: 30),),
     );
   }
 }

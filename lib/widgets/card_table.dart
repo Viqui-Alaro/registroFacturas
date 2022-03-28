@@ -10,6 +10,7 @@ class CardTable extends StatelessWidget {
     return Table(
       children: [
         TableRow(
+        
           children: [
             _SingleCard(color: Colors.blue,icon: Icons.border_all,text: 'Registro Facturas',)
             

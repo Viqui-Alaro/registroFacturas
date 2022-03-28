@@ -30,6 +30,7 @@ class _HomeBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return  SingleChildScrollView(
       child: Column(
+        
         children: [
           //titulos
           PageTitle(),
