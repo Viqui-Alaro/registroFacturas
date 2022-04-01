@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_registro_facturas/screens/screens.dart';
 import 'package:flutter_registro_facturas/services/auth_services.dart';
+import 'package:flutter_registro_facturas/services/user_token_services.dart';
 import 'package:flutter_registro_facturas/share_preferences/preferences.dart';
 import 'package:provider/provider.dart';
 
@@ -17,7 +18,8 @@ class AppState extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) =>AuthService() )
+        ChangeNotifierProvider(create: (_) =>AuthService() ),
+        ChangeNotifierProvider(create: (_) =>TokenUserService() )
       ],
       child: MyApp(),
     );

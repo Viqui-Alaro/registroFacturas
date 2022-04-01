@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_registro_facturas/services/user_token_services.dart';
 import 'package:flutter_registro_facturas/share_preferences/preferences.dart';
 import 'package:flutter_registro_facturas/services/services.dart';
+import 'package:provider/provider.dart';
 
 class registroQR extends StatelessWidget {
 
@@ -10,14 +12,9 @@ class registroQR extends StatelessWidget {
   Widget build(BuildContext context) {
       print(Preferences.token+" :::: TOKEN:::");
 
-      final String? errorMessage =  fetchAlbum.toString();
-  print(fetchAlbum.toString()+" :::: Album:::");
-                    if(errorMessage == null){
-                       Navigator.pushReplacementNamed(context, 'container');
-                    }else{
-                      // TODO: Mostrar error en la pantalla
-                      print(errorMessage);
-                    }
+      final tokenUsuario = Provider.of<TokenUserService>(context);
+
+
 
                     
     return Center(
