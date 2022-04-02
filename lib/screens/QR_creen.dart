@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_registro_facturas/services/user_token_services.dart';
 import 'package:flutter_registro_facturas/share_preferences/preferences.dart';
-import 'package:flutter_registro_facturas/services/services.dart';
+
 import 'package:provider/provider.dart';
 
 class registroQR extends StatelessWidget {
@@ -15,7 +15,9 @@ class registroQR extends StatelessWidget {
       final tokenUsuario = Provider.of<TokenUserService>(context);
 
 
+      //tokenUsuario.headLines;
 
+ print(tokenUsuario);
                     
     return Center(
       
